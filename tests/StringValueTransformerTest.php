@@ -42,8 +42,7 @@ final class StringValueTransformerTest extends TestCase
 
     public function testObjectImplementsToStringTransformsToString()
     {
-        $objectImplementsToString = new class ()
-        {
+        $objectImplementsToString = new class() {
             public function __toString()
             {
                 return 'test-message';
