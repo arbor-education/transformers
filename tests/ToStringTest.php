@@ -13,15 +13,14 @@ namespace Dutek\Transformer;
 use ArrayIterator;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
-use stdClass;
 
 /**
- * Test Dutek\Transformer\StringValueTransformer class.
+ * Test Dutek\Transformer\ToString class.
  *
  * @package Dutek\Transformer
  * @author Dušan Vejin <dutekvejin@gmail.com>
  */
-final class StringValueTransformerTest extends TestCase
+final class ToStringTest extends TestCase
 {
     public function testNullValueTransformsToString()
     {
@@ -86,6 +85,6 @@ final class StringValueTransformerTest extends TestCase
 
     protected function getTransformerInstance() : Transformer
     {
-        return new StringValueTransformer();
+        return new ToString();
     }
 }

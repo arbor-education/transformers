@@ -18,7 +18,7 @@ use InvalidArgumentException;
  * @package Dutek\Transformer
  * @author Dušan Vejin <dutekvejin@gmail.com>
  */
-class StringValueTransformer implements Transformer
+class ToString implements Transformer
 {
     /**
      * Transforms the input to string.
