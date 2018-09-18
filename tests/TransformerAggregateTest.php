@@ -24,6 +24,13 @@ use PHPUnit\Framework\TestCase;
  */
 final class TransformerAggregateTest extends TestCase
 {
+    public function testGetPredicates()
+    {
+        $transformers = [$this->createMock(Transformer::class), $this->createMock(Transformer::class)];
+        $transformer = new TransformerAggregate(...$transformers);
+        $this->assertEquals($transformers, $transformer->getTransformers());
+    }
+
     public function testInputTransformsToOutput()
     {
         $input = 'test';
