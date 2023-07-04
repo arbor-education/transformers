@@ -53,7 +53,7 @@ final class ArrayColumnTest extends TestCase
         $stringValueTransformer($testValue);
     }
 
-    public function arrayTransformsDataProvider() : array
+    public static function arrayTransformsDataProvider() : array
     {
         return [
             [['test' => 1], 1],
@@ -61,7 +61,7 @@ final class ArrayColumnTest extends TestCase
         ];
     }
 
-    public function nonArrayValueThrowsErrorDataProvider() : array
+    public static function nonArrayValueThrowsErrorDataProvider() : array
     {
         return [
             [1],

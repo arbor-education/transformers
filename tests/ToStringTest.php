@@ -64,7 +64,7 @@ final class ToStringTest extends TestCase
         $stringValueTransformer($testValue);
     }
 
-    public function scalarValueTransformsToStringDataProvider() : array
+    public static function scalarValueTransformsToStringDataProvider() : array
     {
         return [
             [123, '123'],
@@ -75,7 +75,7 @@ final class ToStringTest extends TestCase
         ];
     }
 
-    public function valueNotCastableToStringThrowsErrorDataProvider() : array
+    public static function valueNotCastableToStringThrowsErrorDataProvider() : array
     {
         return [
             [[1, 2, 3]],

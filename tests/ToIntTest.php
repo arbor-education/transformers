@@ -51,7 +51,7 @@ final class ToIntTest extends TestCase
         $intValueTransformer($testValue);
     }
 
-    public function scalarValueTransformsToIntDataProvider() : array
+    public static function scalarValueTransformsToIntDataProvider() : array
     {
         return [
             [345, 345],
@@ -64,7 +64,7 @@ final class ToIntTest extends TestCase
         ];
     }
 
-    public function valueNotCastableToIntThrowsErrorDataProvider() : array
+    public static function valueNotCastableToIntThrowsErrorDataProvider() : array
     {
         return [
             [[1, 2, 3]],
