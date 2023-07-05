@@ -26,6 +26,10 @@ class JsonDecode implements Transformer
      */
     public function __invoke($value)
     {
+        if (null === $value) {
+            return '';
+        }
+
         return json_decode($value, true);
     }
 }
