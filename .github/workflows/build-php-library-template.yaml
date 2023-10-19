@@ -1,0 +1,33 @@
+---
+name: 'Build PHP Library Template'
+
+# Reusable workflow - only callable from another workflow.
+on:
+  workflow_call:
+    inputs:
+      php_version:
+        required: true
+        type: string
+
+jobs:
+  build:
+    name: Build & Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Production
+        uses: actions/checkout@v3
+
+      - name: Setup PHP with tools
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ inputs.php_version }}
+          tools: php-cs-fixer, phpunit, composer
+
+      - name: Composer Install
+        run: composer install --no-interaction
+
+      - name: PHP CS
+        run: composer cs-check
+
+      - name: Run Tests
+        run: composer test
